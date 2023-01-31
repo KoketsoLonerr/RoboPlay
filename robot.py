@@ -3,7 +3,7 @@ import maze.obstacles as obs
 
 import import_helper
 import maze.crazy_world
-import maze_operator
+import maze_solver
 
 
 
@@ -237,10 +237,10 @@ def solve_maze(direction):
     obst_import = maze.crazy_world.get_maze_obstacles()
    
 
-    end_x, end_y = maze_operator.find_edge(direction, obst_import)
-    solution = maze_operator.search(direction, position_x, position_y,\
+    end_x, end_y = maze_solver.find_edge(direction, obst_import)
+    solution = maze_solver.search(direction, position_x, position_y,\
                             end_x, end_y, obst_import)
-    wayout = maze_operator.backRoute(solution, end_x, end_y, position_x, position_y)
+    wayout = maze_solver.backRoute(solution, end_x, end_y, position_x, position_y)
 
     run_maze(wayout, direction)
     
