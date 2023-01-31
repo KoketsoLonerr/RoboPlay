@@ -96,7 +96,7 @@ def search(direction, start_x, start_y, end_x, end_y, obst_import):
     """
     frontier = deque()
     solution = dict()
-    visited = list()
+    visited = set()
 
     x = end_x
     y = end_y    
@@ -114,6 +114,6 @@ def search(direction, start_x, start_y, end_x, end_y, obst_import):
                                                  cell not in visited:
                 solution[cell] = x, y    
                 frontier.append(cell)
-                visited.append(cell)
+                visited.add(cell)
 
     return solution
